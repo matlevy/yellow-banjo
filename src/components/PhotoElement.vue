@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import * as FavoriteService from '@/local/FavService'
+
 export default {
   name: 'PhotoElement',
 
@@ -39,7 +41,7 @@ export default {
     },
 
     onBtnClick () {
-      console.log('Mark photo as fave')
+      FavoriteService.like({ id: this.photo.id })
     }
   }
 }

@@ -1,4 +1,4 @@
-import { axios } from 'axios'
+import axios from 'axios'
 
 export const ROOT = 'https://api.unsplash.com'
 export const ENDPOINT = '/photos'

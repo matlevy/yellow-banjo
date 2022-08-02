@@ -11,6 +11,7 @@
 <script>
 import PhotoElement from './PhotoElement'
 import UserCard from './UserCard'
+
 import * as PhotoService from '../http/PhotoService'
 
 export default {
