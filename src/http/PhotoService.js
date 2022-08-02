@@ -8,3 +8,6 @@ export const list = (params = {}) => axios.get(BASE_URL, { params })
 
 export const get = (id, params = {}) =>
   axios.get(`${BASE_URL}/${id}`, { params })
+
+export const search = (params = {}) =>
+  axios.get(`${ROOT}/search/photos`, { params })
