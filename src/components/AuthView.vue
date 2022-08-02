@@ -6,11 +6,11 @@
       <button type="submit">submit</button>
       <button type="reset">reset</button>
     </form>
+    <div><router-link :to="{ name: 'Favourites'}">Favorites</router-link></div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'AuthView',
 

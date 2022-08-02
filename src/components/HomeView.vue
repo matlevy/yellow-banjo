@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="home-view">
     <h1>Home</h1>
+    <div><router-link :to="{ name: 'Favourites'}">Favorites</router-link></div>
     <PhotoList :photos="photos"></PhotoList>
   </div>
 </template>
