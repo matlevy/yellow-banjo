@@ -15,3 +15,13 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+html,
+body,
+.app {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: 'Avenir, Helvetica, Arial, sans-serif';
+  margin: 1rem;
+}
+</style>

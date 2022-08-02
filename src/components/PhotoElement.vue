@@ -1,7 +1,6 @@
 <template lang="html">
-  <div class="photo-element">
-    <img width="100" :src="src" :alt="alt" @click="onImgClick" />
-    <button type="button" @click="onBtnClick">{{ btnText }}</button>
+  <div class="photo-element" :style="styles" :alt="alt" @click="onImgClick">
+    <button type="button" class="fav-button" @click="onBtnClick">{{ btnText }}</button>
   </div>
 </template>
 
@@ -20,6 +19,11 @@ export default {
     size: {
       type: String,
       default: 'regular'
+    },
+
+    preview: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -38,10 +42,20 @@ export default {
     },
     btnText () {
       return this.isLiked ? 'Unlike' : 'Like'
+    },
+    styles () {
+      return {
+        'background-image': `url('${this.src}')`,
+        'background-size': 'cover',
+        'max-width': this.preview ? '50%' : '80%',
+        'min-height': this.preview ? '400px' : `${this.photo.height / 4}px`,
+        'background-repeat': 'no-repeat'
+      }
     }
   },
 
   mounted () {
+    console.log(this.photo)
     this.isLiked = FavoriteService.isLiked({ photo: this.photo })
     FavoriteService.subscribe(this)
   },
@@ -61,3 +75,12 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.fav-button {
+  margin: 1rem;
+  border: 1px solid white;
+  background: black;
+  color: white;
+  padding: 1rem;
+}
+</style>

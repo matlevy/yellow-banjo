@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="home-view">
+    <div><router-link class="link" :to="{ name: 'Favourites'}">Favorites</router-link></div>
     <UserCard
       v-if="photo.user.username"
       :username="photo.user.username"
@@ -40,3 +41,14 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.link {
+  border: 1px solid rgb(184, 184, 184);
+  background-color: transparent;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+</style>

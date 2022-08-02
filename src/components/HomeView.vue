@@ -1,7 +1,6 @@
 <template lang="html">
   <div class="home-view">
-    <h1>Home</h1>
-    <div><router-link :to="{ name: 'Favourites'}">Favorites</router-link></div>
+    <div><router-link class="link" :to="{ name: 'Favourites'}">Favorites</router-link></div>
     <PhotoList :photos="photos"></PhotoList>
   </div>
 </template>
@@ -32,3 +31,14 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.link {
+  border: 1px solid rgb(184, 184, 184);
+  background-color: transparent;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+</style>
