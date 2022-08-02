@@ -1,5 +1,6 @@
 <template lang="html">
-  <div class="photo-element" :style="styles" :alt="alt" @click="onImgClick">
+  <div class="photo-element" :style="styles" :alt="alt">
+    <div class="click-capture" @click="onImgClick"></div>
     <button type="button" class="fav-button" @click="onBtnClick">{{ btnText }}</button>
   </div>
 </template>
@@ -76,11 +77,23 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.photo-element {
+  position: relative;
+}
 .fav-button {
   margin: 1rem;
   border: 1px solid white;
   background: black;
   color: white;
   padding: 1rem;
+  z-index: 10000;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+.click-capture {
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
 }
 </style>
